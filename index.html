@@ -2,23 +2,25 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#111111">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f4ec">
 
 <title>المتميزون للدعاية والإعلان</title>
 
 <style>
 :root{
-  --black:#111111;
-  --dark:#1b1b1b;
-  --gold:#a58b45;
-  --gold2:#c6aa60;
-  --cream:#f8f6f0;
+  --bg:#f7f4ec;
   --white:#ffffff;
-  --muted:#777;
+  --black:#171717;
+  --gold:#a48c4c;
+  --lightgold:#d8c99f;
+  --gray:#777;
+  --border:#e5decb;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -27,340 +29,478 @@ body{
   color:var(--black);
 }
 
-.profile{
+.page{
   max-width:520px;
   min-height:100vh;
   margin:auto;
-  background:var(--cream);
+  background:var(--bg);
   overflow:hidden;
-  box-shadow:0 0 30px rgba(0,0,0,.18);
+  position:relative;
+  box-shadow:0 0 30px rgba(0,0,0,.12);
 }
 
-/* COVER */
+/* ===== COVER ===== */
+
 .cover{
-  height:235px;
-  background:
-    linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.35)),
-    url('2.png') center/cover no-repeat;
-}
-
-/* PROFILE LOGO */
-.logo-area{
-  text-align:center;
-  margin-top:-68px;
+  width:100%;
   position:relative;
 }
 
-.logo{
-  width:136px;
-  height:136px;
+.cover img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* SHARE */
+.share{
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(255,255,255,.7);
   border-radius:50%;
-  object-fit:cover;
-  border:5px solid var(--gold);
-  background:#fff;
-  box-shadow:0 8px 25px rgba(0,0,0,.28);
-}
-
-.info{
-  text-align:center;
-  padding:10px 22px 5px;
-}
-
-.info h1{
-  margin:7px 0;
-  font-size:27px;
-  font-weight:800;
-}
-
-.gold-line{
-  width:65px;
-  height:3px;
-  background:var(--gold);
-  margin:12px auto;
-  border-radius:10px;
-}
-
-.info p{
-  margin:0 auto;
-  max-width:420px;
-  color:#666;
-  line-height:1.8;
-  font-size:14px;
-}
-
-/* MAIN ACTIONS */
-.actions{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  padding:22px 18px;
-}
-
-.action{
-  text-decoration:none;
-  color:var(--black);
-  text-align:center;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.action-icon{
-  width:58px;
-  height:58px;
-  margin:0 auto 8px;
-  border-radius:50%;
-  background:var(--black);
-  border:2px solid var(--gold);
-  color:var(--gold2);
+  background:rgba(20,20,20,.82);
+  color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:23px;
-  transition:.2s;
+  cursor:pointer;
+  backdrop-filter:blur(5px);
 }
 
-.action:active .action-icon{
-  transform:scale(.94);
+.share svg{
+  width:20px;
+  fill:white;
 }
 
-/* SVG */
-.action-icon svg,
-.social-icon svg{
-  width:25px;
-  height:25px;
+/* ===== PROFILE ===== */
+
+.profile{
+  text-align:center;
+  padding:0 22px 18px;
+}
+
+.logo{
+  width:125px;
+  height:125px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-top:-58px;
+  position:relative;
+  background:white;
+  border:4px solid white;
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.16),
+    0 0 0 2px var(--gold);
+}
+
+h1{
+  margin:18px 0 7px;
+  font-size:25px;
+  line-height:1.5;
+}
+
+.description{
+  color:#686868;
+  font-size:14px;
+  line-height:1.9;
+  margin:0;
+}
+
+.divider{
+  width:50px;
+  height:2px;
+  background:var(--gold);
+  margin:15px auto;
+}
+
+/* ===== CONTACT ===== */
+
+.section{
+  padding:5px 18px 10px;
+}
+
+.title{
+  font-size:20px;
+  font-weight:bold;
+  margin:10px 2px 15px;
+}
+
+.link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:14px;
+  margin-bottom:11px;
+  text-decoration:none;
+  color:var(--black);
+  box-shadow:0 3px 12px rgba(0,0,0,.035);
+  transition:.15s;
+}
+
+.link:active{
+  transform:scale(.985);
+}
+
+.icon{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f5f1e6;
+  color:var(--gold);
+  font-weight:bold;
+  font-size:22px;
+}
+
+.icon svg{
+  width:23px;
+  height:23px;
   fill:currentColor;
 }
 
-/* SECTION */
-.section{
-  padding:8px 18px 0;
-}
-
-.section-title{
-  font-size:19px;
-  font-weight:800;
-  margin:8px 3px 14px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.section-title:after{
-  content:"";
-  height:1px;
-  flex:1;
-  background:linear-gradient(to left,var(--gold),transparent);
-}
-
-/* SOCIAL CARDS */
-.card{
-  background:#fff;
-  border:1px solid #e1dac8;
-  border-radius:15px;
-  margin-bottom:11px;
-  padding:14px 15px;
-  display:flex;
-  align-items:center;
-  gap:13px;
-  text-decoration:none;
-  color:var(--black);
-  box-shadow:0 3px 10px rgba(0,0,0,.04);
-}
-
-.social-icon{
-  width:44px;
-  height:44px;
-  min-width:44px;
-  border-radius:12px;
-  background:var(--black);
-  color:var(--gold2);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.card-text{
+.link-info{
   flex:1;
 }
 
-.card-title{
-  font-weight:800;
-  font-size:15px;
+.link-name{
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:4px;
 }
 
-.card-sub{
+.link-value{
   font-size:12px;
   color:#888;
-  margin-top:4px;
   direction:ltr;
   text-align:right;
 }
 
-.chevron{
-  font-size:24px;
+.arrow{
   color:var(--gold);
+  font-size:25px;
 }
 
-/* WHATSAPP CTA */
-.whatsapp{
+/* ===== SAVE CONTACT ===== */
+
+.save-contact{
+  margin:8px 18px 25px;
   display:flex;
   align-items:center;
   justify-content:center;
   gap:10px;
-  margin:22px 18px 12px;
-  padding:16px;
-  border-radius:14px;
   background:var(--black);
-  border:1px solid var(--gold);
-  color:#fff;
+  color:white;
+  border-radius:16px;
+  padding:16px;
   text-decoration:none;
-  font-weight:800;
-  font-size:16px;
+  font-weight:bold;
+  border:1px solid var(--gold);
 }
 
-.whatsapp span{
-  color:var(--gold2);
+.save-contact svg{
+  width:20px;
+  fill:var(--lightgold);
 }
 
-/* PHONE */
-.phone{
+/* ===== SERVICES ===== */
+
+.services{
+  padding:5px 18px 25px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+.service{
+  min-height:112px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:18px 12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+}
+
+.service-icon{
+  font-size:27px;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.service strong{
+  font-size:14px;
+  line-height:1.6;
+}
+
+.service span{
+  font-size:11px;
+  color:#888;
+  margin-top:4px;
+}
+
+/* ===== PHONE ===== */
+
+.phone-box{
+  margin:0 18px 25px;
+  text-align:center;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:18px;
+}
+
+.phone-label{
+  color:#888;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+.phone-number{
   direction:ltr;
   font-size:20px;
-  font-weight:800;
-  padding:8px;
+  font-weight:bold;
 }
 
-/* FOOTER */
+.phone-number a{
+  color:var(--black);
+  text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+
 .footer{
-  margin-top:20px;
-  background:var(--black);
-  color:#aaa;
   text-align:center;
-  padding:18px 10px;
-  font-size:12px;
+  padding:22px 15px 28px;
+  border-top:1px solid var(--border);
+  font-size:11px;
+  color:#999;
 }
 
 .footer strong{
   display:block;
-  color:var(--gold2);
-  font-size:14px;
-  margin-bottom:4px;
+  color:var(--gold);
+  font-size:13px;
+  margin-bottom:5px;
+}
+
+@media(max-width:380px){
+  h1{font-size:22px;}
+  .logo{width:110px;height:110px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="profile">
+<div class="page">
 
-  <div class="cover"></div>
+  <!-- الغلاف -->
+  <div class="cover">
+    <img src="2.png" alt="المتميزون للدعاية والإعلان">
 
-  <div class="logo-area">
-    <img src="1.jpg" class="logo" alt="المتميزون">
+    <button class="share" onclick="sharePage()" aria-label="مشاركة">
+      <svg viewBox="0 0 24 24">
+        <path d="M18 16a3 3 0 0 0-2.4 1.2L8.9 13.3a3.8 3.8 0 0 0 0-2.6l6.7-3.9A3 3 0 1 0 15 5c0 .2 0 .4.1.6L8.4 9.5a3 3 0 1 0 0 5l6.7 3.9A3 3 0 1 0 18 16z"/>
+      </svg>
+    </button>
   </div>
 
-  <div class="info">
+
+  <!-- المعلومات -->
+  <div class="profile">
+
+    <img src="1.jpg" class="logo" alt="شعار المتميزون">
+
     <h1>المتميزون للدعاية والإعلان</h1>
-    <div class="gold-line"></div>
-    <p>
-      قارمات • حروف بارزة • لوحات مضيئة<br>
-      مطبوعات • كروت • بروشورات • استيكرات
+
+    <div class="divider"></div>
+
+    <p class="description">
+      من التصميم إلى التنفيذ<br>
+      حلول متكاملة للدعاية والإعلان والطباعة
     </p>
-  </div>
-
-  <div class="actions">
-
-    <a class="action" href="tel:+905343654232">
-      <div class="action-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M6.62 10.79a15.46 15.46 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
-        </svg>
-      </div>
-      اتصال
-    </a>
-
-    <a class="action" href="https://wa.me/905343654232">
-      <div class="action-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M20.5 3.5A11.8 11.8 0 0012.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L.1 24l6.3-1.7a12 12 0 005.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.2-3.5-8.4zM12.2 21.8a9.8 9.8 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.3c0-5.4 4.4-9.8 9.8-9.8a9.7 9.7 0 016.9 2.9 9.7 9.7 0 012.9 6.9c0 5.5-4.4 9.9-9.8 9.9z"/>
-        </svg>
-      </div>
-      واتساب
-    </a>
-
-    <a class="action" href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb">
-      <div class="action-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/>
-        </svg>
-      </div>
-      الموقع
-    </a>
-
-    <a class="action" href="#" onclick="sharePage();return false;">
-      <div class="action-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M18 16a3 3 0 00-2.4 1.2L8.9 13.3a3.7 3.7 0 000-2.6l6.7-3.9A3 3 0 1015 5a2 2 0 00.1.6L8.4 9.5a3 3 0 100 5l6.7 3.9A2 2 0 0015 19a3 3 0 103-3z"/>
-        </svg>
-      </div>
-      مشاركة
-    </a>
 
   </div>
 
+
+  <!-- التواصل -->
   <div class="section">
 
-    <div class="section-title">تواصل معنا</div>
+    <div class="title">تواصل معنا</div>
 
-    <a class="card" href="https://www.instagram.com/emin34reklam">
-      <div class="social-icon">◎</div>
-      <div class="card-text">
-        <div class="card-title">Instagram</div>
-        <div class="card-sub">@emin34reklam</div>
-      </div>
-      <div class="chevron">‹</div>
-    </a>
 
-    <a class="card" href="https://www.tiktok.com/@emin34reklam">
-      <div class="social-icon">♪</div>
-      <div class="card-text">
-        <div class="card-title">TikTok</div>
-        <div class="card-sub">@emin34reklam</div>
-      </div>
-      <div class="chevron">‹</div>
-    </a>
+    <!-- WhatsApp -->
+    <a class="link" href="https://wa.me/905343654232">
 
-    <a class="card" href="https://www.facebook.com/emin34reklam">
-      <div class="social-icon">f</div>
-      <div class="card-text">
-        <div class="card-title">Facebook</div>
-        <div class="card-sub">emin34reklam</div>
-      </div>
-      <div class="chevron">‹</div>
-    </a>
-
-    <a class="card" href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb">
-      <div class="social-icon">
+      <div class="icon">
         <svg viewBox="0 0 24 24">
-          <path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/>
+          <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L.1 24l6.3-1.7a12 12 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.2-3.5-8.4z"/>
         </svg>
       </div>
-      <div class="card-text">
-        <div class="card-title">موقعنا</div>
-        <div class="card-sub">Google Maps</div>
+
+      <div class="link-info">
+        <div class="link-name">واتساب</div>
+        <div class="link-value">+90 534 365 42 32</div>
       </div>
-      <div class="chevron">‹</div>
+
+      <div class="arrow">‹</div>
+
+    </a>
+
+
+    <!-- Instagram -->
+    <a class="link" href="https://www.instagram.com/emin34reklam">
+
+      <div class="icon">◎</div>
+
+      <div class="link-info">
+        <div class="link-name">Instagram</div>
+        <div class="link-value">@emin34reklam</div>
+      </div>
+
+      <div class="arrow">‹</div>
+
+    </a>
+
+
+    <!-- TikTok -->
+    <a class="link" href="https://www.tiktok.com/@emin34reklam">
+
+      <div class="icon">♪</div>
+
+      <div class="link-info">
+        <div class="link-name">TikTok</div>
+        <div class="link-value">@emin34reklam</div>
+      </div>
+
+      <div class="arrow">‹</div>
+
+    </a>
+
+
+    <!-- Facebook -->
+    <a class="link" href="https://www.facebook.com/emin34reklam">
+
+      <div class="icon">f</div>
+
+      <div class="link-info">
+        <div class="link-name">Facebook</div>
+        <div class="link-value">emin34reklam</div>
+      </div>
+
+      <div class="arrow">‹</div>
+
+    </a>
+
+
+    <!-- Google Maps -->
+    <a class="link"
+       href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb">
+
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+        </svg>
+      </div>
+
+      <div class="link-info">
+        <div class="link-name">موقعنا</div>
+        <div class="link-value">Google Maps</div>
+      </div>
+
+      <div class="arrow">‹</div>
+
     </a>
 
   </div>
 
-  <a class="whatsapp" href="https://wa.me/905343654232">
-    <span>●</span>
-    تواصل معنا عبر واتساب
+
+  <!-- حفظ جهة الاتصال -->
+  <a class="save-contact" href="emin.vcf" download>
+    <svg viewBox="0 0 24 24">
+      <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm6 11H6v-1c0-2 4-3 6-3s6 1 6 3v1z"/>
+    </svg>
+
+    حفظ جهة الاتصال
   </a>
 
-  <div class="phone">+90 534 365 42 32</div>
+
+  <!-- الخدمات -->
+  <div class="services">
+
+    <div class="title">خدماتنا</div>
+
+    <div class="service-grid">
+
+      <div class="service">
+        <div class="service-icon">A</div>
+        <strong>قارمات وحروف بارزة</strong>
+        <span>تنفيذ احترافي للواجهات</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">✦</div>
+        <strong>لوحات مضيئة</strong>
+        <span>حلول إعلانية للواجهات</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">▤</div>
+        <strong>مطبوعات</strong>
+        <span>مطبوعات تجارية متنوعة</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">▰</div>
+        <strong>كروت وبروشورات</strong>
+        <span>تصميم وطباعة</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">◇</div>
+        <strong>استيكرات وفوليو</strong>
+        <span>قص وطباعة وتركيب</span>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">✎</div>
+        <strong>تصميم إعلاني</strong>
+        <span>من الفكرة إلى التنفيذ</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- رقم الهاتف -->
+  <div class="phone-box">
+
+    <div class="phone-label">للاتصال المباشر</div>
+
+    <div class="phone-number">
+      <a href="tel:+905343654232">
+        +90 534 365 42 32
+      </a>
+    </div>
+
+  </div>
+
 
   <div class="footer">
     <strong>المتميزون للدعاية والإعلان</strong>
@@ -369,17 +509,25 @@ body{
 
 </div>
 
+
 <script>
 function sharePage(){
+
   if(navigator.share){
+
     navigator.share({
-      title:'المتميزون للدعاية والإعلان',
+      title:"المتميزون للدعاية والإعلان",
       url:window.location.href
     });
+
   }else{
+
     navigator.clipboard.writeText(window.location.href);
-    alert('تم نسخ الرابط');
+
+    alert("تم نسخ رابط الصفحة");
+
   }
+
 }
 </script>
 
