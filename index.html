@@ -39,7 +39,7 @@ body{
   box-shadow:0 0 30px rgba(0,0,0,.12);
 }
 
-/* ===== COVER ===== */
+/* COVER */
 
 .cover{
   width:100%;
@@ -52,14 +52,15 @@ body{
   display:block;
 }
 
-/* SHARE */
+/* SHARE BUTTON */
+
 .share{
   position:absolute;
   top:14px;
   left:14px;
   width:42px;
   height:42px;
-  border:1px solid rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.8);
   border-radius:50%;
   background:rgba(20,20,20,.82);
   color:#fff;
@@ -68,14 +69,16 @@ body{
   justify-content:center;
   cursor:pointer;
   backdrop-filter:blur(5px);
+  box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
 .share svg{
   width:20px;
-  fill:white;
+  height:20px;
+  fill:#fff;
 }
 
-/* ===== PROFILE ===== */
+/* PROFILE */
 
 .profile{
   text-align:center;
@@ -89,8 +92,8 @@ body{
   border-radius:50%;
   margin-top:-58px;
   position:relative;
-  background:white;
-  border:4px solid white;
+  background:#fff;
+  border:4px solid #fff;
   box-shadow:
     0 8px 25px rgba(0,0,0,.16),
     0 0 0 2px var(--gold);
@@ -116,7 +119,7 @@ h1{
   margin:15px auto;
 }
 
-/* ===== CONTACT ===== */
+/* SECTIONS */
 
 .section{
   padding:5px 18px 10px;
@@ -124,47 +127,49 @@ h1{
 
 .title{
   font-size:20px;
-  font-weight:bold;
+  font-weight:700;
   margin:10px 2px 15px;
 }
+
+/* CONTACT CARDS */
 
 .link{
   display:flex;
   align-items:center;
-  gap:14px;
-  background:white;
+  gap:13px;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
-  padding:14px;
+  padding:13px 14px;
   margin-bottom:11px;
   text-decoration:none;
   color:var(--black);
   box-shadow:0 3px 12px rgba(0,0,0,.035);
-  transition:.15s;
+  transition:transform .15s, box-shadow .15s;
 }
 
 .link:active{
   transform:scale(.985);
 }
 
-.icon{
-  width:46px;
-  height:46px;
-  min-width:46px;
+.app-icon{
+  width:48px;
+  height:48px;
+  min-width:48px;
   border-radius:14px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#f5f1e6;
-  color:var(--gold);
-  font-weight:bold;
-  font-size:22px;
+  background:#fff;
+  border:1px solid #eee;
+  box-shadow:0 2px 7px rgba(0,0,0,.06);
+  overflow:hidden;
 }
 
-.icon svg{
-  width:23px;
-  height:23px;
-  fill:currentColor;
+.app-icon svg{
+  width:28px;
+  height:28px;
+  display:block;
 }
 
 .link-info{
@@ -173,7 +178,7 @@ h1{
 
 .link-name{
   font-size:16px;
-  font-weight:bold;
+  font-weight:700;
   margin-bottom:4px;
 }
 
@@ -187,31 +192,33 @@ h1{
 .arrow{
   color:var(--gold);
   font-size:25px;
+  font-weight:300;
 }
 
-/* ===== SAVE CONTACT ===== */
+/* SAVE CONTACT */
 
 .save-contact{
-  margin:8px 18px 25px;
+  margin:10px 18px 25px;
   display:flex;
   align-items:center;
   justify-content:center;
   gap:10px;
   background:var(--black);
-  color:white;
+  color:#fff;
   border-radius:16px;
   padding:16px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:700;
   border:1px solid var(--gold);
 }
 
 .save-contact svg{
-  width:20px;
+  width:21px;
+  height:21px;
   fill:var(--lightgold);
 }
 
-/* ===== SERVICES ===== */
+/* SERVICES */
 
 .services{
   padding:5px 18px 25px;
@@ -225,7 +232,7 @@ h1{
 
 .service{
   min-height:112px;
-  background:white;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
   padding:18px 12px;
@@ -237,8 +244,16 @@ h1{
 }
 
 .service-icon{
-  font-size:27px;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#f4efe2;
   color:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
   margin-bottom:10px;
 }
 
@@ -251,14 +266,15 @@ h1{
   font-size:11px;
   color:#888;
   margin-top:4px;
+  line-height:1.5;
 }
 
-/* ===== PHONE ===== */
+/* PHONE */
 
 .phone-box{
   margin:0 18px 25px;
   text-align:center;
-  background:white;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
   padding:18px;
@@ -267,13 +283,13 @@ h1{
 .phone-label{
   color:#888;
   font-size:12px;
-  margin-bottom:6px;
+  margin-bottom:7px;
 }
 
 .phone-number{
   direction:ltr;
   font-size:20px;
-  font-weight:bold;
+  font-weight:700;
 }
 
 .phone-number a{
@@ -281,7 +297,7 @@ h1{
   text-decoration:none;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 .footer{
   text-align:center;
@@ -299,8 +315,20 @@ h1{
 }
 
 @media(max-width:380px){
-  h1{font-size:22px;}
-  .logo{width:110px;height:110px;}
+  h1{
+    font-size:22px;
+  }
+
+  .logo{
+    width:110px;
+    height:110px;
+  }
+
+  .app-icon{
+    width:45px;
+    height:45px;
+    min-width:45px;
+  }
 }
 </style>
 </head>
@@ -309,19 +337,21 @@ h1{
 
 <div class="page">
 
-  <!-- الغلاف -->
+  <!-- COVER -->
   <div class="cover">
+
     <img src="2.png" alt="المتميزون للدعاية والإعلان">
 
-    <button class="share" onclick="sharePage()" aria-label="مشاركة">
+    <button class="share" onclick="sharePage()" aria-label="مشاركة الرابط">
       <svg viewBox="0 0 24 24">
-        <path d="M18 16a3 3 0 0 0-2.4 1.2L8.9 13.3a3.8 3.8 0 0 0 0-2.6l6.7-3.9A3 3 0 1 0 15 5c0 .2 0 .4.1.6L8.4 9.5a3 3 0 1 0 0 5l6.7 3.9A3 3 0 1 0 18 16z"/>
+        <path d="M18 16c-.8 0-1.5.3-2.1.8L8.9 12.7c.1-.2.1-.5.1-.7s0-.5-.1-.7l6.9-4.1A3 3 0 1 0 15 5c0 .2 0 .5.1.7L8.2 9.8A3 3 0 1 0 8.2 14l6.9 4.1c-.1.3-.1.6-.1.9a3 3 0 1 0 3-3z"/>
       </svg>
     </button>
+
   </div>
 
 
-  <!-- المعلومات -->
+  <!-- PROFILE -->
   <div class="profile">
 
     <img src="1.jpg" class="logo" alt="شعار المتميزون">
@@ -338,19 +368,25 @@ h1{
   </div>
 
 
-  <!-- التواصل -->
+  <!-- CONTACT -->
   <div class="section">
 
     <div class="title">تواصل معنا</div>
 
 
-    <!-- WhatsApp -->
-    <a class="link" href="https://wa.me/905343654232">
+    <!-- WHATSAPP -->
+    <a class="link"
+       href="https://wa.me/905343654232"
+       target="_blank">
 
-      <div class="icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L.1 24l6.3-1.7a12 12 0 0 0 5.7 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.2-3.5-8.4z"/>
+      <div class="app-icon">
+
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#25D366"/>
+          <path fill="#fff"
+          d="M23.5 8.4A10.4 10.4 0 0 0 7.2 20.9L5.7 26.4l5.6-1.5a10.4 10.4 0 0 0 12.2-16.5zm-7.3 14.9a8.6 8.6 0 0 1-4.4-1.2l-.3-.2-3.3.9.9-3.2-.2-.3a8.6 8.6 0 1 1 7.3 4zm4.7-6.4c-.3-.1-1.5-.7-1.8-.8-.2-.1-.4-.1-.6.2-.2.3-.7.8-.9 1-.2.2-.3.2-.6.1-1.5-.7-2.6-1.4-3.6-3-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.6-.1-.2-.6-1.5-.9-2-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/>
         </svg>
+
       </div>
 
       <div class="link-info">
@@ -363,10 +399,44 @@ h1{
     </a>
 
 
-    <!-- Instagram -->
-    <a class="link" href="https://www.instagram.com/emin34reklam">
+    <!-- INSTAGRAM -->
+    <a class="link"
+       href="https://www.instagram.com/emin34reklam"
+       target="_blank">
 
-      <div class="icon">◎</div>
+      <div class="app-icon">
+
+        <svg viewBox="0 0 32 32">
+          <defs>
+            <radialGradient id="igGradient" cx="30%" cy="100%" r="130%">
+              <stop offset="0%" stop-color="#FFD600"/>
+              <stop offset="35%" stop-color="#FF7A00"/>
+              <stop offset="65%" stop-color="#FF0169"/>
+              <stop offset="100%" stop-color="#D300C5"/>
+            </radialGradient>
+          </defs>
+
+          <rect width="32" height="32" rx="8" fill="url(#igGradient)"/>
+
+          <rect x="7.5" y="7.5"
+                width="17" height="17"
+                rx="5"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2.2"/>
+
+          <circle cx="16" cy="16"
+                  r="4.2"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2.2"/>
+
+          <circle cx="22" cy="10.5"
+                  r="1.3"
+                  fill="#fff"/>
+        </svg>
+
+      </div>
 
       <div class="link-info">
         <div class="link-name">Instagram</div>
@@ -378,10 +448,34 @@ h1{
     </a>
 
 
-    <!-- TikTok -->
-    <a class="link" href="https://www.tiktok.com/@emin34reklam">
+    <!-- TIKTOK -->
+    <a class="link"
+       href="https://www.tiktok.com/@emin34reklam"
+       target="_blank">
 
-      <div class="icon">♪</div>
+      <div class="app-icon">
+
+        <svg viewBox="0 0 32 32">
+
+          <rect width="32" height="32" rx="8" fill="#000"/>
+
+          <path
+            d="M18.2 7.2v11.1a4.2 4.2 0 1 1-3.6-4.1v2.7a1.8 1.8 0 1 0 1.2 1.7V7.2h2.4z"
+            fill="#25F4EE"
+            transform="translate(-1,1)"/>
+
+          <path
+            d="M18.2 7.2c.3 2.6 1.8 4.1 4.4 4.4V14c-1.7 0-3.1-.5-4.4-1.5v5.8a4.2 4.2 0 1 1-3.6-4.1v2.7a1.8 1.8 0 1 0 1.2 1.7V7.2h2.4z"
+            fill="#FE2C55"
+            transform="translate(1,0)"/>
+
+          <path
+            d="M18.2 7.2c.3 2.6 1.8 4.1 4.4 4.4V14c-1.7 0-3.1-.5-4.4-1.5v5.8a4.2 4.2 0 1 1-3.6-4.1v2.7a1.8 1.8 0 1 0 1.2 1.7V7.2h2.4z"
+            fill="#fff"/>
+
+        </svg>
+
+      </div>
 
       <div class="link-info">
         <div class="link-name">TikTok</div>
@@ -393,10 +487,21 @@ h1{
     </a>
 
 
-    <!-- Facebook -->
-    <a class="link" href="https://www.facebook.com/emin34reklam">
+    <!-- FACEBOOK -->
+    <a class="link"
+       href="https://www.facebook.com/emin34reklam"
+       target="_blank">
 
-      <div class="icon">f</div>
+      <div class="app-icon">
+
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#1877F2"/>
+
+          <path fill="#fff"
+          d="M18.1 27V17.1h3.3l.5-3.8h-3.8v-2.4c0-1.1.3-1.8 1.9-1.8h2V5.7c-.3 0-1.5-.1-2.9-.1-2.9 0-4.9 1.8-4.9 5v2.8H11v3.8h3.2V27h3.9z"/>
+        </svg>
+
+      </div>
 
       <div class="link-info">
         <div class="link-name">Facebook</div>
@@ -408,14 +513,33 @@ h1{
     </a>
 
 
-    <!-- Google Maps -->
+    <!-- GOOGLE MAPS -->
     <a class="link"
-       href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb">
+       href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb"
+       target="_blank">
 
-      <div class="icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+      <div class="app-icon">
+
+        <svg viewBox="0 0 32 32">
+
+          <path fill="#34A853"
+          d="M16 2C10.5 2 6 6.4 6 11.9c0 7.4 10 18.1 10 18.1s10-10.7 10-18.1C26 6.4 21.5 2 16 2z"/>
+
+          <path fill="#4285F4"
+          d="M16 2C10.5 2 6 6.4 6 11.9c0 2.6 1.2 5.5 2.8 8.1L16 12V2z"/>
+
+          <path fill="#FBBC04"
+          d="M16 12l7.1 8c1.7-2.7 2.9-5.5 2.9-8.1 0-1.8-.5-3.5-1.3-5L16 12z"/>
+
+          <path fill="#EA4335"
+          d="M16 2v10l8.7-5.1A10 10 0 0 0 16 2z"/>
+
+          <circle cx="16" cy="12" r="4.1" fill="#fff"/>
+
+          <circle cx="16" cy="12" r="2.3" fill="#4285F4"/>
+
         </svg>
+
       </div>
 
       <div class="link-info">
@@ -430,17 +554,19 @@ h1{
   </div>
 
 
-  <!-- حفظ جهة الاتصال -->
+  <!-- SAVE CONTACT -->
   <a class="save-contact" href="emin.vcf" download>
+
     <svg viewBox="0 0 24 24">
       <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm6 11H6v-1c0-2 4-3 6-3s6 1 6 3v1z"/>
     </svg>
 
     حفظ جهة الاتصال
+
   </a>
 
 
-  <!-- الخدمات -->
+  <!-- SERVICES -->
   <div class="services">
 
     <div class="title">خدماتنا</div>
@@ -488,7 +614,7 @@ h1{
   </div>
 
 
-  <!-- رقم الهاتف -->
+  <!-- PHONE -->
   <div class="phone-box">
 
     <div class="phone-label">للاتصال المباشر</div>
@@ -502,6 +628,7 @@ h1{
   </div>
 
 
+  <!-- FOOTER -->
   <div class="footer">
     <strong>المتميزون للدعاية والإعلان</strong>
     كل ما تحتاجه لتمييز علامتك التجارية
@@ -517,17 +644,20 @@ function sharePage(){
 
     navigator.share({
       title:"المتميزون للدعاية والإعلان",
+      text:"المتميزون للدعاية والإعلان",
       url:window.location.href
     });
 
-  }else{
+  }else if(navigator.clipboard){
 
     navigator.clipboard.writeText(window.location.href);
-
     alert("تم نسخ رابط الصفحة");
 
-  }
+  }else{
 
+    alert(window.location.href);
+
+  }
 }
 </script>
 
