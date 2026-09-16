@@ -420,7 +420,7 @@ html[dir="ltr"] .arrow{
 
 
     <!-- WHATSAPP -->
-   <a class="link" href="https://wa.me/905343654232" onclick="return openApp(event,'whatsapp')">
+   <a class="link" href="https://wa.me/905343654232">
 
       <div class="app-icon">
 
@@ -443,7 +443,7 @@ html[dir="ltr"] .arrow{
 
 
     <!-- INSTAGRAM -->
-<a class="link" href="https://www.instagram.com/emin34reklam/" onclick="return openApp(event,'instagram')">
+<a class="link" href="https://www.instagram.com/emin34reklam/">
 
       <div class="app-icon">
 
@@ -490,7 +490,7 @@ html[dir="ltr"] .arrow{
 
 
     <!-- TIKTOK -->
-    <a class="link" href="https://www.tiktok.com/@emin34reklam" onclick="return openApp(event,'tiktok')">
+    <a class="link" href="https://www.tiktok.com/@emin34reklam">
       
       <div class="app-icon">
 
@@ -527,7 +527,7 @@ html[dir="ltr"] .arrow{
 
 
     <!-- FACEBOOK -->
-  <a class="link" href="https://www.facebook.com/emin34reklam" onclick="return openApp(event,'facebook')">
+  <a class="link" href="https://www.facebook.com/emin34reklam">
 
       <div class="app-icon">
 
@@ -551,7 +551,7 @@ html[dir="ltr"] .arrow{
 
 
     <!-- GOOGLE MAPS -->
-  <a class="link" href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb" onclick="return openApp(event,'maps')">
+  <a class="link" href="https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb">
 
       <div class="app-icon">
 
@@ -784,64 +784,6 @@ function setLanguage(language){
 
 function toggleLanguage(){
   setLanguage(currentLanguage === "ar" ? "tr" : "ar");
-}
-
-function openApp(event, app){
-  event.preventDefault();
-
-  const ua = navigator.userAgent || "";
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-  const links = {
-    whatsapp: {
-      web: "https://wa.me/905343654232",
-      ios: "whatsapp://send?phone=905343654232",
-      android: "intent://send?phone=905343654232#Intent;scheme=whatsapp;package=com.whatsapp;S.browser_fallback_url=https%3A%2F%2Fwa.me%2F905343654232;end"
-    },
-    instagram: {
-      web: "https://www.instagram.com/emin34reklam/",
-      ios: "instagram://user?username=emin34reklam",
-      android: "intent://user?username=emin34reklam#Intent;scheme=instagram;package=com.instagram.android;S.browser_fallback_url=https%3A%2F%2Fwww.instagram.com%2Femin34reklam%2F;end"
-    },
-    tiktok: {
-      web: "https://www.tiktok.com/@emin34reklam",
-      ios: "snssdk1233://user/profile/emin34reklam",
-      android: "intent://user/profile/emin34reklam#Intent;scheme=snssdk1233;package=com.zhiliaoapp.musically;S.browser_fallback_url=https%3A%2F%2Fwww.tiktok.com%2F%40emin34reklam;end"
-    },
-    facebook: {
-      web: "https://www.facebook.com/emin34reklam",
-      ios: "fb://facewebmodal/f?href=https://www.facebook.com/emin34reklam",
-      android: "intent://facewebmodal/f?href=https%3A%2F%2Fwww.facebook.com%2Femin34reklam#Intent;scheme=fb;package=com.facebook.katana;S.browser_fallback_url=https%3A%2F%2Fwww.facebook.com%2Femin34reklam;end"
-    },
-    maps: {
-      web: "https://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb",
-      ios: "comgooglemaps://?q=Emin%20Reklam",
-      android: "intent://maps.app.goo.gl/6TCW9C4hNLnz2j3m6?g_st=awb#Intent;scheme=https;package=com.google.android.apps.maps;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fmaps.app.goo.gl%2F6TCW9C4hNLnz2j3m6%3Fg_st%3Dawb;end"
-    }
-  };
-
-  const item = links[app];
-  if(!item) return false;
-
-  if(isAndroid){
-    window.location.href = item.android;
-    return false;
-  }
-
-  if(isIOS){
-    let fallbackTimer;
-    const cancelFallback = () => {
-      if(document.hidden && fallbackTimer) clearTimeout(fallbackTimer);
-    };
-    document.addEventListener("visibilitychange", cancelFallback, {once:true});
-    fallbackTimer = setTimeout(() => { window.location.href = item.web; }, 1200);
-    window.location.href = item.ios;
-    return false;
-  }
-
-  window.location.href = item.web;
-  return false;
 }
 
 function saveContact(event) {
