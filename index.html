@@ -324,6 +324,39 @@ h1{
   margin-bottom:5px;
 }
 
+
+/* LANGUAGE SWITCH */
+.lang-switch{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:5;
+  height:42px;
+  padding:0 14px;
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:21px;
+  background:rgba(20,20,20,.82);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  cursor:pointer;
+  backdrop-filter:blur(5px);
+  box-shadow:0 3px 10px rgba(0,0,0,.15);
+  font-family:inherit;
+  font-size:13px;
+  font-weight:600;
+}
+
+html[dir="ltr"] .link-value{
+  text-align:left;
+}
+
+html[dir="ltr"] .arrow{
+  transform:rotate(180deg);
+}
+
 @media(max-width:380px){
   h1{
     font-size:22px;
@@ -350,7 +383,9 @@ h1{
   <!-- COVER -->
   <div class="cover">
 
-    <img src="2.png" alt="المتميزون للدعاية والإعلان">
+    <img src="2.png" alt="المتميزون للدعاية والإعلان" id="coverAlt">
+
+    <button class="lang-switch" onclick="toggleLanguage()" id="langSwitch" aria-label="تغيير اللغة">🇹🇷 Türkçe</button>
 
     <button class="share" onclick="sharePage()" aria-label="مشاركة الرابط">
       <svg viewBox="0 0 24 24">
@@ -366,11 +401,11 @@ h1{
 
     <img src="1.jpg" class="logo" alt="شعار المتميزون">
 
-    <h1>المتميزون للدعاية والإعلان</h1>
+    <h1 id="mainTitle">المتميزون للدعاية والإعلان</h1>
 
     <div class="divider"></div>
 
-    <p class="description">
+    <p class="description" id="mainDescription">
       من التصميم إلى التنفيذ<br>
       حلول متكاملة للدعاية والإعلان والطباعة
     </p>
@@ -381,7 +416,7 @@ h1{
   <!-- CONTACT -->
   <div class="section">
 
-    <div class="title">تواصل معنا</div>
+    <div class="title" id="contactTitle">تواصل معنا</div>
 
 
     <!-- WHATSAPP -->
@@ -398,7 +433,7 @@ h1{
       </div>
 
       <div class="link-info">
-        <div class="link-name">واتساب</div>
+        <div class="link-name" id="whatsappName">واتساب</div>
         <div class="link-value">+90 534 365 42 32</div>
       </div>
 
@@ -445,7 +480,7 @@ h1{
       </div>
 
       <div class="link-info">
-        <div class="link-name">Instagram</div>
+        <div class="link-name" id="instagramName">إنستغرام</div>
         <div class="link-value">@emin34reklam</div>
       </div>
 
@@ -482,7 +517,7 @@ h1{
       </div>
 
       <div class="link-info">
-        <div class="link-name">TikTok</div>
+        <div class="link-name" id="tiktokName">تيك توك</div>
         <div class="link-value">@emin34reklam</div>
       </div>
 
@@ -506,7 +541,7 @@ h1{
       </div>
 
       <div class="link-info">
-        <div class="link-name">Facebook</div>
+        <div class="link-name" id="facebookName">فيسبوك</div>
         <div class="link-value">emin34reklam</div>
       </div>
 
@@ -543,7 +578,7 @@ h1{
       </div>
 
       <div class="link-info">
-        <div class="link-name">موقعنا</div>
+        <div class="link-name" id="mapsName">موقعنا</div>
         <div class="link-value">Google Maps</div>
       </div>
 
@@ -561,7 +596,7 @@ h1{
       <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm6 11H6v-1c0-2 4-3 6-3s6 1 6 3v1z"/>
     </svg>
 
-    حفظ جهة الاتصال
+    <span id="saveContactText">حفظ جهة الاتصال</span>
 
   </a>
 
@@ -569,44 +604,44 @@ h1{
   <!-- SERVICES -->
   <div class="services">
 
-    <div class="title">خدماتنا</div>
+    <div class="title" id="servicesTitle">خدماتنا</div>
 
     <div class="service-grid">
 
       <div class="service">
         <div class="service-icon">A</div>
-        <strong>قارمات وحروف بارزة</strong>
-        <span>تنفيذ احترافي للواجهات</span>
+        <strong id="service1Title">قارمات وحروف بارزة</strong>
+        <span id="service1Desc">تنفيذ احترافي للواجهات</span>
       </div>
 
       <div class="service">
         <div class="service-icon">✦</div>
-        <strong>لوحات مضيئة</strong>
-        <span>حلول إعلانية للواجهات</span>
+        <strong id="service2Title">لوحات مضيئة</strong>
+        <span id="service2Desc">حلول إعلانية للواجهات</span>
       </div>
 
       <div class="service">
         <div class="service-icon">▤</div>
-        <strong>مطبوعات</strong>
-        <span>مطبوعات تجارية متنوعة</span>
+        <strong id="service3Title">مطبوعات</strong>
+        <span id="service3Desc">مطبوعات تجارية متنوعة</span>
       </div>
 
       <div class="service">
         <div class="service-icon">▰</div>
-        <strong>كروت وبروشورات</strong>
-        <span>تصميم وطباعة</span>
+        <strong id="service4Title">كروت وبروشورات</strong>
+        <span id="service4Desc">تصميم وطباعة</span>
       </div>
 
       <div class="service">
         <div class="service-icon">◇</div>
-        <strong>استيكرات وفوليو</strong>
-        <span>قص وطباعة وتركيب</span>
+        <strong id="service5Title">استيكرات وفوليو</strong>
+        <span id="service5Desc">قص وطباعة وتركيب</span>
       </div>
 
       <div class="service">
         <div class="service-icon">✎</div>
-        <strong>تصميم إعلاني</strong>
-        <span>من الفكرة إلى التنفيذ</span>
+        <strong id="service6Title">تصميم إعلاني</strong>
+        <span id="service6Desc">من الفكرة إلى التنفيذ</span>
       </div>
 
     </div>
@@ -617,7 +652,7 @@ h1{
   <!-- PHONE -->
   <div class="phone-box">
 
-    <div class="phone-label">للاتصال المباشر</div>
+    <div class="phone-label" id="phoneLabel">للاتصال المباشر</div>
 
     <div class="phone-number">
       <a href="tel:+905343654232">
@@ -630,14 +665,127 @@ h1{
 
   <!-- FOOTER -->
   <div class="footer">
-    <strong>المتميزون للدعاية والإعلان</strong>
-    كل ما تحتاجه لتمييز علامتك التجارية
+    <strong id="footerTitle">المتميزون للدعاية والإعلان</strong>
+    <span id="footerText">كل ما تحتاجه لتمييز علامتك التجارية</span>
   </div>
 
 </div>
 
 
 <script>
+const translations = {
+  ar: {
+    dir: "rtl",
+    lang: "ar",
+    switchText: "🇹🇷 Türkçe",
+    pageTitle: "المتميزون للدعاية والإعلان",
+    mainTitle: "المتميزون للدعاية والإعلان",
+    mainDescription: "من التصميم إلى التنفيذ<br>حلول متكاملة للدعاية والإعلان والطباعة",
+    contactTitle: "تواصل معنا",
+    whatsappName: "واتساب",
+    instagramName: "إنستغرام",
+    tiktokName: "تيك توك",
+    facebookName: "فيسبوك",
+    mapsName: "موقعنا",
+    saveContactText: "حفظ جهة الاتصال",
+    servicesTitle: "خدماتنا",
+    service1Title: "قارمات وحروف بارزة",
+    service1Desc: "تنفيذ احترافي للواجهات",
+    service2Title: "لوحات مضيئة",
+    service2Desc: "حلول إعلانية للواجهات",
+    service3Title: "مطبوعات",
+    service3Desc: "مطبوعات تجارية متنوعة",
+    service4Title: "كروت وبروشورات",
+    service4Desc: "تصميم وطباعة",
+    service5Title: "استيكرات وفوليو",
+    service5Desc: "قص وطباعة وتركيب",
+    service6Title: "تصميم إعلاني",
+    service6Desc: "من الفكرة إلى التنفيذ",
+    phoneLabel: "للاتصال المباشر",
+    footerTitle: "المتميزون للدعاية والإعلان",
+    footerText: "كل ما تحتاجه لتمييز علامتك التجارية",
+    shareLabel: "مشاركة الرابط",
+    shareText: "المتميزون للدعاية والإعلان",
+    copied: "تم نسخ رابط الصفحة"
+  },
+  tr: {
+    dir: "ltr",
+    lang: "tr",
+    switchText: "العربية 🇸🇦",
+    pageTitle: "EMİN REKLAM – TABELA – MATBAA",
+    mainTitle: "EMİN REKLAM – TABELA – MATBAA",
+    mainDescription: "Tasarımdan uygulamaya<br>Reklam, tabela ve baskıda profesyonel çözümler",
+    contactTitle: "İletişim",
+    whatsappName: "WhatsApp",
+    instagramName: "Instagram",
+    tiktokName: "TikTok",
+    facebookName: "Facebook",
+    mapsName: "Konumumuz",
+    saveContactText: "Rehbere Kaydet",
+    servicesTitle: "Hizmetlerimiz",
+    service1Title: "Tabela ve Kutu Harf",
+    service1Desc: "Cepheler için profesyonel uygulama",
+    service2Title: "Işıklı Tabela",
+    service2Desc: "İş yerleri için etkili reklam çözümleri",
+    service3Title: "Baskı Ürünleri",
+    service3Desc: "Çeşitli ticari baskı çözümleri",
+    service4Title: "Kartvizit ve Broşür",
+    service4Desc: "Tasarım ve baskı",
+    service5Title: "Sticker ve Folyo",
+    service5Desc: "Kesim, baskı ve uygulama",
+    service6Title: "Grafik Tasarım",
+    service6Desc: "Fikirden uygulamaya",
+    phoneLabel: "Hemen Ara",
+    footerTitle: "EMİN REKLAM – TABELA – MATBAA",
+    footerText: "Markanızı öne çıkarmak için ihtiyacınız olan her şey",
+    shareLabel: "Bağlantıyı paylaş",
+    shareText: "EMİN REKLAM – TABELA – MATBAA",
+    copied: "Bağlantı kopyalandı"
+  }
+};
+
+let currentLanguage = "ar";
+
+function setLanguage(language){
+  const t = translations[language];
+  currentLanguage = language;
+  document.documentElement.lang = t.lang;
+  document.documentElement.dir = t.dir;
+  document.title = t.pageTitle;
+
+  document.getElementById("langSwitch").textContent = t.switchText;
+  document.getElementById("mainTitle").textContent = t.mainTitle;
+  document.getElementById("mainDescription").innerHTML = t.mainDescription;
+  document.getElementById("contactTitle").textContent = t.contactTitle;
+  document.getElementById("whatsappName").textContent = t.whatsappName;
+  document.getElementById("instagramName").textContent = t.instagramName;
+  document.getElementById("tiktokName").textContent = t.tiktokName;
+  document.getElementById("facebookName").textContent = t.facebookName;
+  document.getElementById("mapsName").textContent = t.mapsName;
+  document.getElementById("saveContactText").textContent = t.saveContactText;
+  document.getElementById("servicesTitle").textContent = t.servicesTitle;
+  document.getElementById("service1Title").textContent = t.service1Title;
+  document.getElementById("service1Desc").textContent = t.service1Desc;
+  document.getElementById("service2Title").textContent = t.service2Title;
+  document.getElementById("service2Desc").textContent = t.service2Desc;
+  document.getElementById("service3Title").textContent = t.service3Title;
+  document.getElementById("service3Desc").textContent = t.service3Desc;
+  document.getElementById("service4Title").textContent = t.service4Title;
+  document.getElementById("service4Desc").textContent = t.service4Desc;
+  document.getElementById("service5Title").textContent = t.service5Title;
+  document.getElementById("service5Desc").textContent = t.service5Desc;
+  document.getElementById("service6Title").textContent = t.service6Title;
+  document.getElementById("service6Desc").textContent = t.service6Desc;
+  document.getElementById("phoneLabel").textContent = t.phoneLabel;
+  document.getElementById("footerTitle").textContent = t.footerTitle;
+  document.getElementById("footerText").textContent = t.footerText;
+  document.querySelector(".share").setAttribute("aria-label", t.shareLabel);
+}
+
+function toggleLanguage(){
+  setLanguage(currentLanguage === "ar" ? "tr" : "ar");
+}
+
 function openApp(event, app){
   event.preventDefault();
 
@@ -723,16 +871,17 @@ function sharePage(){
 
   if(navigator.share){
 
+    const t = translations[currentLanguage];
     navigator.share({
-      title:"المتميزون للدعاية والإعلان",
-      text:"المتميزون للدعاية والإعلان",
+      title:t.shareText,
+      text:t.shareText,
       url:window.location.href
     });
 
   }else if(navigator.clipboard){
 
     navigator.clipboard.writeText(window.location.href);
-    alert("تم نسخ رابط الصفحة");
+    alert(translations[currentLanguage].copied);
 
   }else{
 
